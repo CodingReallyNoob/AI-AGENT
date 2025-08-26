@@ -1,0 +1,200 @@
+I Built an AI Agent Army in n8n That Completely Replaced My Personal Assistant
+Workflow - Code Included
+r/n8n - I Built an AI Agent Army in n8n That Completely Replaced My Personal Assistant
+JSON: https://github.com/shabbirun/redesigned-octo-barnacle/blob/cd5d0a06421243d16c29f1310880e59761ce6621/Personal%20Assistant.json
+
+YouTube Overview: https://www.youtube.com/watch?v=8pd1MryDvlY
+
+TL;DR: Created a comprehensive AI assistant system using n8n that handles everything from emails to travel planning through Telegram. It's like having a $5000/month assistant that works 24/7.
+
+I was spending way too much time on repetitive tasks - managing emails, scheduling meetings, tracking expenses, researching topics, and planning content. Hiring a personal assistant would cost $5k+ monthly, and they'd still need training and breaks.
+
+The Solution: An AI Agent Army
+Built a multi-agent system in n8n with 8 specialized AI agents, each handling specific tasks. Everything is controlled through a single Telegram interface with both text and voice commands.
+
+The Architecture
+Core Orchestrator Agent
+Master brain that routes requests to specialized agents
+
+Uses GPT-4.1 for complex reasoning
+
+Has memory (PostgreSQL) for context across conversations
+
+Handles natural language understanding of what I need
+
+The Specialized Agents:
+📧 Email Management Agent
+
+Drafts, sends, and organizes emails
+
+Searches through email history
+
+Adds/removes labels automatically
+
+Can reply to emails with context
+
+📅 Calendar Agent
+
+Books meetings and manages schedule
+
+Creates, updates, deletes events
+
+Finds optimal meeting times
+
+Integrates with Google Calendar
+
+💰 Finance Tracker Agent
+
+Logs expenses automatically
+
+Categorizes spending (food, travel, entertainment, etc.)
+
+Retrieves spending reports
+
+Uses Airtable as the database
+
+🌍 Travel Agent
+
+Finds flights and hotels using SerpAPI
+
+Compares prices and options
+
+Books travel based on preferences
+
+Provides top 3 cost-effective recommendations
+
+📰 Weather & News Agent
+
+Gets current weather with forecasts
+
+Fetches latest news on any topic
+
+Location-aware updates
+
+Uses WeatherAPI and SerpAPI
+
+🔍 Research Agent
+
+Deep research using Tavily and Perplexity
+
+Can do basic or in-depth research
+
+Pulls from multiple sources
+
+Provides cited, accurate information
+
+✍️ Content Creation Agent
+
+Writes complete blog posts with SEO optimization
+
+Generates images using Flux via Replicate
+
+Creates Google Docs automatically
+
+Includes proper H2/H3 structure and sourcing
+
+📱 Social Media Calendar Agent
+
+Manages content ideas for Instagram, LinkedIn, TikTok
+
+Suggests frameworks for posts
+
+Integrates with Airtable database
+
+Helps choose and reject content ideas
+
+👥 Contact Manager Agent
+
+Searches Google Contacts
+
+Finds email addresses and phone numbers
+
+Integrates with other agents for meeting booking
+
+How I Use It
+Voice Commands via Telegram:
+
+"Log lunch expense 500 rupees"
+
+"What's the weather tomorrow?"
+
+"Find flights from Mumbai to Dubai next week"
+
+"Write a blog post about AI automation"
+
+"Schedule a meeting with John next Tuesday"
+
+Text Commands:
+
+Research requests with automatic source citation
+
+Email management and responses
+
+Content planning and creation
+
+Expense tracking and reporting
+
+The Tech Stack
+n8n - Main automation platform
+
+GPT-4.1 - Primary language model for orchestration
+
+Claude Sonnet 4 - For content creation tasks
+
+Telegram - User interface (text + voice)
+
+PostgreSQL - Memory storage
+
+Airtable - Data management
+
+Google Workspace - Calendar, Contacts, Docs
+
+SerpAPI - News, flights, hotels
+
+Perplexity & Tavily - Research
+
+Replicate - Image generation
+
+The Results
+Saves 20+ hours per week on routine tasks
+
+Never forgets to log expenses or appointments
+
+Instant research on any topic with sources
+
+Professional content creation in minutes
+
+Travel planning that used to take hours now takes seconds
+
+Email zero is actually achievable now
+
+What Makes This Special
+Unlike simple chatbots, this system actually executes tasks. It doesn't just tell you what to do - it does it. Books the meeting, sends the email, logs the expense, creates the document.
+
+The magic is in the orchestration layer that understands context and routes complex requests to the right specialized agents, then combines their outputs into coherent responses.
+
+Technical Challenges Solved
+Context switching between different types of requests
+
+Memory persistence across sessions
+
+Error handling when APIs fail
+
+Natural language to structured data conversion
+
+Multi-step workflows that require decision-making
+
+Want to Build This?
+The entire workflow is available as a template. Key things you'll need:
+
+n8n instance (cloud or self-hosted)
+
+API keys for OpenAI, Anthropic, SerpAPI, etc.
+
+Google Workspace access
+
+Telegram bot setup
+
+PostgreSQL database for memory
+
+Happy to answer questions about the implementation!
